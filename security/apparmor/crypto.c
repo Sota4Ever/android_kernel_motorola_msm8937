@@ -31,6 +31,7 @@ unsigned int aa_hash_size(void)
 
 char *aa_calc_hash(void *data, size_t len)
 {
+	SHASH_DESC_ON_STACK(desc, apparmor_tfm);
 	char *hash = NULL;
 	int error = -ENOMEM;
 
